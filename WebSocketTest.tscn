@@ -24,13 +24,20 @@ margin_bottom = 24.0
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 margin_top = 28.0
 margin_right = 1024.0
-margin_bottom = 600.0
+margin_bottom = 576.0
 size_flags_vertical = 3
 
 [node name="ItemList" type="ItemList" parent="VBoxContainer/ScrollContainer"]
 margin_right = 1024.0
-margin_bottom = 572.0
+margin_bottom = 548.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 580.0
+margin_right = 1024.0
+margin_bottom = 600.0
+text = "Send Script"
+
 [connection signal="text_entered" from="VBoxContainer/LineEdit" to="." method="_on_LineEdit_text_entered"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_Button_pressed"]

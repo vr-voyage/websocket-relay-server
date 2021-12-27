@@ -92,3 +92,17 @@ func send_message(message:String) -> void:
 				continue
 			client.put_packet(message.to_utf8())
 			log_msg("[Client:%d] %s" % [client_id, message])
+
+
+func _on_Button_pressed():
+	var filepath:String = "../../../Documents/Neos VR/Sample.lgx"
+	var f = File.new()
+	var err = f.open(filepath, File.READ)
+	if (err != OK):
+		printerr("Could not open %s : Code %d", filepath, err)
+		return
+	var content:String = f.get_as_text()
+	f.close()
+	printerr(content)
+	send_message(content)
+
